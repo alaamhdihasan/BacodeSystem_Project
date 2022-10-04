@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BacodeSystem", "BacodeSystem\BacodeSystem.csproj", "{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		BS_System|Any CPU = BS_System|Any CPU
+		BS_System|x64 = BS_System|x64
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.BS_System|Any CPU.ActiveCfg = BS_System|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.BS_System|Any CPU.Build.0 = BS_System|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.BS_System|x64.ActiveCfg = BS_System|x64
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.BS_System|x64.Build.0 = BS_System|x64
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Debug|x64.ActiveCfg = Debug|x64
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Debug|x64.Build.0 = Debug|x64
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Release|x64.ActiveCfg = Release|x64
+		{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D49A31C6-DCC1-4F5A-89E8-A7046573101B}
+	EndGlobalSection
+EndGlobal

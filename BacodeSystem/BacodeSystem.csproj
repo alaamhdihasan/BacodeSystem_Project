@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EmguCV.3.1.0.1\build\EmguCV.props" Condition="Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB86ABB9-B9B9-4955-8D80-7DA1B7A24536}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BacodeSystem</RootNamespace>
+    <AssemblyName>BacodeSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BS_System|AnyCPU'">
+    <OutputPath>bin\BS_System\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BS_System|x64'">
+    <OutputPath>bin\x64\BS_System\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>car-side-view-in-a-rounded-square_icon-icons.com_70773.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Export, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Extensions, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\learning\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.GLControl.1.1.2225.0\lib\net20\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TwainLib, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TwainLib.dll</HintPath>
+    </Reference>
+    <Reference Include="TwainScanning, Version=1.1.0.11, Culture=neutral, PublicKeyToken=69c27c0ddf03a463, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TwainScanning.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.5\lib\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLS\CLS_CARARCHIEVE.cs" />
+    <Compile Include="CLS\CLS_CARFUELARCHIVE.cs" />
+    <Compile Include="CLS\CLS_CARMOVEMENTS.cs" />
+    <Compile Include="CLS\CLS_CarMoveOther.cs" />
+    <Compile Include="CLS\CLS_CarMoveUser.cs" />
+    <Compile Include="CLS\CLS_CARS.cs" />
+    <Compile Include="CLS\CLS_CARSACCIDENT.cs" />
+    <Compile Include="CLS\CLS_CarsCounters.cs" />
+    <Compile Include="CLS\CLS_CARSFUEL.cs" />
+    <Compile Include="CLS\CLS_CARSREPORT.cs" />
+    <Compile Include="CLS\CLS_CUSTOMERS.cs" />
+    <Compile Include="CLS\CLS_DEPARTMENTS.cs" />
+    <Compile Include="CLS\CLS_DISTENATION.cs" />
+    <Compile Include="CLS\CLS_DRIVERS.cs" />
+    <Compile Include="CLS\CLS_RPCARMOVEMENT.cs" />
+    <Compile Include="CLS\CLS_THETYPE.cs" />
+    <Compile Include="CLS\CLS_USERS.cs" />
+    <Compile Include="CNT\BC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CNT\BC.Designer.cs">
+      <DependentUpon>BC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNT\CarCount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CNT\CarCount.Designer.cs">
+      <DependentUpon>CarCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNT\CarState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CNT\CarState.Designer.cs">
+      <DependentUpon>CarState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CRUD.cs" />
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="DS\DSCars.cs">
+      <DependentUpon>DSCars.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\DSCars.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCars.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_Backup.Designer.cs">
+      <DependentUpon>FRM_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarMovements.Designer.cs">
+      <DependentUpon>FRM_CarMovements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarReport.Designer.cs">
+      <DependentUpon>FRM_CarReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarsAccident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarsAccident.Designer.cs">
+      <DependentUpon>FRM_CarsAccident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarsFuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarsFuel.Designer.cs">
+      <DependentUpon>FRM_CarsFuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CARSINFORMATIONS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CARSINFORMATIONS.Designer.cs">
+      <DependentUpon>FRM_CARSINFORMATIONS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarFuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CarFuel.Designer.cs">
+      <DependentUpon>FRM_CarFuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\Frm_Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\Frm_Control.Designer.cs">
+      <DependentUpon>Frm_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_Counters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_Counters.Designer.cs">
+      <DependentUpon>FRM_Counters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_CUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_CUSTOMERS.Designer.cs">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_DRIVERINFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_DRIVERINFO.Designer.cs">
+      <DependentUpon>FRM_DRIVERINFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_ENTRYDATA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_ENTRYDATA.Designer.cs">
+      <DependentUpon>FRM_ENTRYDATA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_EntryNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_EntryNumber.Designer.cs">
+      <DependentUpon>FRM_EntryNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_EntryWords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_EntryWords.Designer.cs">
+      <DependentUpon>FRM_EntryWords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_MAIN.Designer.cs">
+      <DependentUpon>FRM_MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_MovementsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_MovementsReport.Designer.cs">
+      <DependentUpon>FRM_MovementsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_Setting.Designer.cs">
+      <DependentUpon>FRM_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\Frm_StateDetials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\Frm_StateDetials.Designer.cs">
+      <DependentUpon>Frm_StateDetials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_UserCarMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_UserCarMovements.Designer.cs">
+      <DependentUpon>FRM_UserCarMovements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMS\FRM_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMS\FRM_Users.Designer.cs">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPTS\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPTS\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RP_Barcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RP_Barcode.Designer.cs">
+      <DependentUpon>RP_Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RP_CarInformation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RP_CarInformation.Designer.cs">
+      <DependentUpon>RP_CarInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RP_CarMovements.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RP_CarMovements.Designer.cs">
+      <DependentUpon>RP_CarMovements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RP_Cars.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RP_Cars.Designer.cs">
+      <DependentUpon>RP_Cars.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CNT\BC.resx">
+      <DependentUpon>BC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNT\CarCount.resx">
+      <DependentUpon>CarCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNT\CarState.resx">
+      <DependentUpon>CarState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_Backup.resx">
+      <DependentUpon>FRM_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CarMovements.resx">
+      <DependentUpon>FRM_CarMovements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CarReport.resx">
+      <DependentUpon>FRM_CarReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CarsAccident.resx">
+      <DependentUpon>FRM_CarsAccident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CarsFuel.resx">
+      <DependentUpon>FRM_CarsFuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CARSINFORMATIONS.resx">
+      <DependentUpon>FRM_CARSINFORMATIONS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CarFuel.resx">
+      <DependentUpon>FRM_CarFuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\Frm_Control.resx">
+      <DependentUpon>Frm_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_Counters.resx">
+      <DependentUpon>FRM_Counters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_CUSTOMERS.resx">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_DRIVERINFO.resx">
+      <DependentUpon>FRM_DRIVERINFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_ENTRYDATA.resx">
+      <DependentUpon>FRM_ENTRYDATA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_EntryNumber.resx">
+      <DependentUpon>FRM_EntryNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_EntryWords.resx">
+      <DependentUpon>FRM_EntryWords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_MAIN.resx">
+      <DependentUpon>FRM_MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_MovementsReport.resx">
+      <DependentUpon>FRM_MovementsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_Setting.resx">
+      <DependentUpon>FRM_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\Frm_StateDetials.resx">
+      <DependentUpon>Frm_StateDetials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_UserCarMovements.resx">
+      <DependentUpon>FRM_UserCarMovements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMS\FRM_Users.resx">
+      <DependentUpon>FRM_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RPTS\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RP_Barcode.resx">
+      <DependentUpon>RP_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RP_CarInformation.resx">
+      <DependentUpon>RP_CarInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RP_CarMovements.resx">
+      <DependentUpon>RP_CarMovements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RP_Cars.resx">
+      <DependentUpon>RP_Cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DS\DSCars.xsc">
+      <DependentUpon>DSCars.xsd</DependentUpon>
+    </None>
+    <None Include="DS\DSCars.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCars.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS\DSCars.xss">
+      <DependentUpon>DSCars.xsd</DependentUpon>
+    </None>
+    <Fakes Include="Fakes\Guna.UI.fakes" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Multiply_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Backup_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Recovery_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Groups_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taj Mahal_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cathedral_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categorize_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Driving_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joining Queue_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Courses_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Traffic Jam_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limousine Car_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limousine Car_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speedometer_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gas Station_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crashed Car_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Traffic Jam_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\الاليات.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bullish_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%2540Venkatesh_Sompari_Walls%2540~32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TV_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iMac_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comments_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="car-side-view-in-a-rounded-square_icon-icons.com_70773.ico" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\Synchronize_48px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmguCV.3.1.0.1\build\EmguCV.props'))" />
+    <Error Condition="!Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmguCV.3.1.0.1\build\EmguCV.targets'))" />
+  </Target>
+  <Import Project="..\packages\EmguCV.3.1.0.1\build\EmguCV.targets" Condition="Exists('..\packages\EmguCV.3.1.0.1\build\EmguCV.targets')" />
+</Project>
